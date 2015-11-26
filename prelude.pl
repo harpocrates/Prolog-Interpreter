@@ -9,6 +9,9 @@ append([X|Xs],Ys,[X|Zs]) :- append(Xs,Ys,Zs).
 
 member(X,Ys) :- append(Ws,[X|Zs],Ys).
 
+length([],0).
+length([X|Xs],s(N)) :- length(Xs,N).
+
 
 number(0).
 number(s(N)) :- number(N).
