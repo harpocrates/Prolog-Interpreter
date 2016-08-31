@@ -9,11 +9,7 @@ The interpreter comes with a small prelude library of basic list/arithmetic oper
 
 # Sample usage
 
-After compiling, run from the command line with the files to load as arguments.
-
-    $ ghc prolog.hs && ./prolog sample.pl
-
-From just the prelude, we can query:
+Build with `stack build` or `cabal build` and run with `stack exec -- prolog sample.pl` or `cabal run`. From just the prelude, we can query:
 
     > gcd(42,216,X)?
     { X = 6 };
