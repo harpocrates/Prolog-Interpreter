@@ -1,3 +1,5 @@
+{-# LANGUAGE DoAndIfThenElse #-}
+
 module Prolog.Base
   ( Term(..), Clause(..)
   , Program, Query, Substitution
@@ -56,7 +58,7 @@ query p qs = do
                 qs' = fmap (substitute mgu) qs
                 q'  = b' ++ qs' -- new resolvent
 
-            if (q' /= []) -- if the resolvent is not empty
+            if q' /= [] -- if the resolvent is not empty
               then do s <- query' (d+1) p q'
                       return $ mgu ++ s
             else return $ mgu

@@ -6,7 +6,7 @@ import Prolog.Base hiding (query, unify, substitute, variables)
 
 import Text.ParserCombinators.Parsec hiding (spaces)
 
--- parse a variable: `X`
+-- | parse a variable: `X`
 variable :: Parser (Int -> Term)
 variable = do
   c <- upper

@@ -1,7 +1,11 @@
+module Main
+  ( main
+  ) where
+
 import Prolog.Base
 import Prolog.Interpreter
 
-import Control.Monad      (forM)
+import Data.Traversable   (for)
 import Data.Either        (partitionEithers)
 import Data.List          (intercalate)
 import System.Environment (getArgs)
@@ -14,7 +18,7 @@ main = do
 
   -- Load the other programs
   sourcePaths <- getArgs
-  program <- forM sourcePaths $ \s -> openFile s ReadMode >>= loadProgram s
+  program <- for sourcePaths $ \s -> openFile s ReadMode >>= loadProgram s
   let (errors,successes) = partitionEithers program
 
   -- set `stdout` to buffer output after every character

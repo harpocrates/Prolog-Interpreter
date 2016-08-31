@@ -1,0 +1,14 @@
+name:           prolog-interpreter
+version:        0.1
+synopsis:       Naive Prolog interpreter
+license:        BSD3
+author:         Alec Theriault
+maintainer:     alec.theriault@gmail.com
+build-type:     Simple
+cabal-version:  >=1.8
+
+executable prolog
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  build-depends:       base >= 4 && < 5,
+                       parsec >= 3
